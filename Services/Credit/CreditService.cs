@@ -50,7 +50,7 @@ namespace BeCleverChallenge.Services.Credit
 
         public int AddPayment(AddPayment input)
         {
-            var result = _context.Database.ExecuteSqlRaw($"SP_ALTA_PAGO {input.CreditId},{input.Amount},{input.PayType},{input.OperationNumber}");
+            var result = _context.Database.ExecuteSqlRaw($"SP_ALTA_PAGO {input.CreditId},{input.Amount},{input.PayType},'{input.OperationNumber}'");
             return result;
         }
 
@@ -60,9 +60,10 @@ namespace BeCleverChallenge.Services.Credit
             return result;
         }
 
-        public List<CreditModel> GetCreditReport()
+        public List<CreditReportModel> GetCreditReport(DateTime desde, DateTime hasta)
         {
-            throw new NotImplementedException();
+            var result = _context.Set<CreditReportModel>().FromSqlRaw($"SP_PAYMENT_REPORT '{desde}', '{hasta}'").ToList();
+            return result;
         }
 
     }

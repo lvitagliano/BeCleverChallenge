@@ -1,5 +1,6 @@
 ﻿using BeCleverChallenge.Services.Credit;
 using BeCleverChallenge.Services.Credit.Dto;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace BeCleverChallenge.Controllers
@@ -43,6 +44,12 @@ namespace BeCleverChallenge.Controllers
         public IActionResult AddPayment(AddPayment input)
         {
             return Ok(_creditService.AddPayment(input));
+        }
+
+        [HttpGet]
+        public IActionResult GetCreditReport(DateTime desde, DateTime hasta)
+        {
+            return Ok(_creditService.GetCreditReport(desde, hasta));
         }
     }
 }

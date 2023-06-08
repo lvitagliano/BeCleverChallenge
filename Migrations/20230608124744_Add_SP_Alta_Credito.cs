@@ -44,7 +44,8 @@ namespace BeCleverChallenge.Migrations
                                        ,[ClientId]
                                        ,[Active]
                                        ,[AmountWithInterest]
-									   ,[PaidQuotes])
+									   ,[PaidQuotes]
+									   ,[CreatedAt])
                                  VALUES
                                        (@Amount
                                        , @InterestPercent
@@ -59,8 +60,9 @@ namespace BeCleverChallenge.Migrations
                                        , @ClientId
                                        , 1
                                        , @calcAmountWithInterest
-									   ,0)
-                    END");
+									   ,0
+									   ,GETDATE())
+                                END");
         }
 
         /// <inheritdoc />

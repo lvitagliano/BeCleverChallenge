@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace BeCleverChallenge.Migrations
 {
     [DbContext(typeof(BeCleverContext))]
-    [Migration("20230607173256_Add_SP_Alta_Credito")]
-    partial class Add_SP_Alta_Credito
+    [Migration("20230608132902_SP_Alta_Pago_and_SP_Afecta_Pago")]
+    partial class SP_Alta_Pago_and_SP_Afecta_Pago
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -75,11 +75,17 @@ namespace BeCleverChallenge.Migrations
                     b.Property<int?>("ClientId")
                         .HasColumnType("int");
 
+                    b.Property<DateTime?>("CreatedAt")
+                        .HasColumnType("datetime2");
+
                     b.Property<decimal?>("DelayInterestPercent")
                         .HasColumnType("decimal(18,2)");
 
                     b.Property<int?>("ExpirationDay")
                         .HasColumnType("int");
+
+                    b.Property<DateTime?>("FinalizedDate")
+                        .HasColumnType("datetime2");
 
                     b.Property<decimal?>("Interest")
                         .HasColumnType("decimal(18,2)");

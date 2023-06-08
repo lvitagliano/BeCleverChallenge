@@ -5,7 +5,7 @@ namespace BeCleverChallenge.Services.Credit
 {
     public interface ICreditService
     {
-        List<CreditModel> GetCreditReport();
+        List<CreditReportModel> GetCreditReport(DateTime desde, DateTime hasta);
         decimal GetCreditQuote(int id);
         List<PaymentTypeModel> GetAllPaymentType();
         int CreateCredit(InserCredit input);

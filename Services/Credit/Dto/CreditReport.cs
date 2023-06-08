@@ -1,12 +1,7 @@
-﻿using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
-
-namespace BeCleverChallenge.Models
+﻿namespace BeCleverChallenge.Services.Credit.Dto
 {
-    public class CreditModel
+    public class CreditReport
     {
-        [Required]
-        [Key, Column("Id", TypeName = "int")]
         public int Id { get; set; }
         public decimal? Amount { get; set; }
         public decimal? InterestPercent { get; set; }
@@ -23,6 +18,6 @@ namespace BeCleverChallenge.Models
         public int? ClientId { get; set; }
         public DateTime? CreatedAt { get; set; }
         public DateTime? FinalizedDate { get; set; }
-        public bool? Active { get; set; }
+        public decimal? AmountPay { get; set; }
     }
 }

@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace BeCleverChallenge.Migrations
 {
     /// <inheritdoc />
-    public partial class FirstMigrationAllTables : Migration
+    public partial class FisrtMigrationWithAllTables : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -47,6 +47,8 @@ namespace BeCleverChallenge.Migrations
                     DelayInterestPercent = table.Column<decimal>(type: "decimal(18,2)", nullable: true),
                     UserId = table.Column<int>(type: "int", nullable: true),
                     ClientId = table.Column<int>(type: "int", nullable: true),
+                    CreatedAt = table.Column<DateTime>(type: "datetime2", nullable: true),
+                    FinalizedDate = table.Column<DateTime>(type: "datetime2", nullable: true),
                     Active = table.Column<bool>(type: "bit", nullable: true)
                 },
                 constraints: table =>

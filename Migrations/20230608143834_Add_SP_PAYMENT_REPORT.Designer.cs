@@ -4,6 +4,7 @@ using BeCleverChallenge.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace BeCleverChallenge.Migrations
 {
     [DbContext(typeof(BeCleverContext))]
-    partial class BeCleverContextModelSnapshot : ModelSnapshot
+    [Migration("20230608143834_Add_SP_PAYMENT_REPORT")]
+    partial class Add_SP_PAYMENT_REPORT
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

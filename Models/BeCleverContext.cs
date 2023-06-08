@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using BeCleverChallenge.Services.Credit.Dto;
 using Microsoft.EntityFrameworkCore;
 
 namespace BeCleverChallenge.Models;
@@ -20,6 +21,7 @@ public partial class BeCleverContext : DbContext
     public virtual DbSet<CreditModel> Credit { get; set; }
     public virtual DbSet<CreditPaymentModel> CreditPayment { get; set; }
     public virtual DbSet<PaymentTypeModel> PaymentType { get; set; }
+    public virtual DbSet<CreditReportModel> CreditReportModel { get; set; }
     
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         => optionsBuilder.UseSqlServer("Server=localhost\\SQLEXPRESS;Database=BeClever;Trusted_Connection=True;TrustServerCertificate=True");
