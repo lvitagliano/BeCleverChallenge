@@ -7,7 +7,7 @@ namespace BeCleverChallenge.Controllers
 {
     [ApiController]
     [Route("api/[controller]/[action]")]
-    //[Authorize]
+    [Authorize]
     public class CreditController : ControllerBase
     {
         ICreditService _creditService;
