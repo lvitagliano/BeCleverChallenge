@@ -28,7 +28,7 @@ namespace BeCleverChallenge.Controllers
             return Ok(_creditService.GetCreditByClient(Id));
         }
 
-        [HttpPost]
+        [HttpGet]
         public IActionResult GetCreditQuote(int Id)
         {
             return Ok(_creditService.GetCreditQuote(Id));
